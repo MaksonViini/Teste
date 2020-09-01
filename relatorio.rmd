@@ -1,0 +1,11 @@
+---
+title: 'Relatorio'
+output: pdf_document
+---
+``` {r setup, include = FALSE}
+    knitr :: opts_chunk$set(encho = TRUE)
+```
+# Teste
+``` {r} 
+print('Teste')
+```
