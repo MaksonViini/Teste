@@ -31,3 +31,16 @@ boxplot(viagens$Valor.passagens)
 
 # Desvio padrao
 sd(viagens$Valor.passagens)
+
+# Verificar valores nulos nas colunas
+colSums(is.na(viagens))
+
+# Verificando ocorrencias
+
+str(viagens$Situação)
+
+# Verificando a quantidade de ocorrencias a cada classe
+table(viagens$Situação)
+
+# Valor em percentual
+prop.table(table(viagens$Situação)) * 100
