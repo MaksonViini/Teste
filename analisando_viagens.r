@@ -21,14 +21,13 @@ head(viagens$data.inicio.formatada)
 
 # Explorando os dados
 
-hist(viagens$valor.passagens)
+hist(viagens$Valor.passagens)
 
 # Valores max, min e media .... da coluna valor
-summary(viagens$valor.passagens)
+summary(viagens$Valor.passagens)
 
 # Visualizando os valores em boxplot
-boxplot(viagens$valor.passagens)
+boxplot(viagens$Valor.passagens)
 
 # Desvio padrao
-
-sd(viagens$valor.passagens)
+sd(viagens$Valor.passagens)
