@@ -53,4 +53,11 @@ head(p1)
 
 # Criando grafico de barras com ggplot
 library(ggplot2)
-ggplot(p1, aes(x=reorder(Orgao, Valor), y=valor)) + geom_bar(stat='identity') + coord_flip() + labs(x='Valor', y='Orgao')
+ggplot(p1, aes(x=reorder(Orgao, Valor), y=Valor)) + geom_bar(stat='identity') + coord_flip() + labs(x='Valor', y='Orgao')
+
+p2 = viagens %>% group_by(Destinos) %>% summarise(n=sum(Valor.passagens)) %>% arrange(desc(n)) %>% top_n(15)
+names(p2) = c('Destino', 'Valor')
+head(p2)
+
+ggplot(p2, aes(x=reorder(Destino, Valor), y=Valor)) + geom_bar(stat='identity', fill='#0ba791') + geom_text(aes(label=Valor), 
+vjust=0.3, size=3) + coord_flip() + labs(x='Valor', y='Destino')
