@@ -44,3 +44,13 @@ table(viagens$Situação)
 
 # Valor em percentual
 prop.table(table(viagens$Situação)) * 100
+
+# 1 - Quais orgaos estao gastando mais com viagens?
+# Criando um dataframe com os 15 que mais gastam
+p1 = viagens %>% group_by(Nome.do.órgão.superior) %>% summarise(n = sum(Valor.passagens)) %>% arrange(desc(n)) %>% top_n(15)
+names(p1) = c('Orgao', 'Valor')
+head(p1)
+
+# Criando grafico de barras com ggplot
+library(ggplot2)
+ggplot(p1, aes(x=reorder(Orgao, Valor), y=valor)) + geom_bar(stat='identity') + coord_flip() + labs(x='Valor', y='Orgao')
