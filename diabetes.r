@@ -50,4 +50,53 @@ install.packages('e1071')
 library(caret)
 library(e1071)
 
+# Criacao do modelo baseado no algoritmo KNN
 modelo = train(Outcome ~., data = train, method = 'knn')
+
+# Verificando as metricas
+modelo$results
+modelo$bestTune
+
+# Testando outros valores de K
+modelo2 = train(Outcome ~., data = train, method = 'knn', tuneGrid = expand.grid(k = c(1:20)))
+modelo2$results
+modelo2$bestTune
+
+plot(modelo2)
+
+# Criando outro modelo
+modelo3 = train(Outcome ~., data = train, method = 'naive_bayes')
+modelo3$results
+modelo3$bestTune
+
+# Testando o modelo SVM
+sed.seed(100)
+modelo4 = train(Outcome ~., data = train, method = 'svmRadialSigma', preProcess = c('center'))
+modelo4$results
+modelo3$bestTune
+
+# Avaliando o modelo, predicao
+predicoes = predict(modelo4, test)
+predicoes
+
+# Comparacao com o conjunto de treino na matriz de confusao
+confusionMatrix(predicoes, test$Outcome)
+
+# Realizando predicoes
+novos.dados = data.frame(Pregnancies = c(3), 
+    Glucose = c(111.50), 
+    BloodPressure = c(70), 
+    SkinThickness = c(20), 
+    Insulin = c(47.09), 
+    BMI = c(30.80), 
+    DiabetesPedigreeFunction = c(0.34),
+    Age = c(28))
+novos.dados
+
+# Previsao
+previsao = predict(modelo4, novos.dados)
+resultado = ifelse(previsao == 1, 'Positivo', 'Negativo')
+print(paste('Resultado', resultado))
+
+# Visualizacao dos resultados
+write.csv(predicoes, 'resultado.csv')
