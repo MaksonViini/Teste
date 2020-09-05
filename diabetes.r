@@ -26,7 +26,7 @@ diabetes2 = diabetes %>% filter(Insulin <= 250)
 boxplot(diabetes2$Insulin)
 
 # Construcao do modelo
-install.packages('caTools')
+#install.packages('caTools')
 library(caTools) # Pacote para dividir entre treino e teste
 
 set.seed(123)
@@ -43,8 +43,8 @@ dim(train)
 dim(test)
 
 # Instalando pacote para criacao do modelo
-install.packages('caret')
-install.packages('e1071')
+#install.packages('caret')
+#install.packages('e1071')
 
 # Carregando os pacotes
 library(caret)
