@@ -5,6 +5,27 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "CodeLens (Launch) - Aula0007",
+            "request": "launch",
+            "mainClass": "Aula0007",
+            "projectName": "Teste_33b196d3"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Exemplo1",
+            "request": "launch",
+            "mainClass": "Exemplo1",
+            "projectName": "Teste_33b196d3"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - teste",
+            "request": "launch",
+            "mainClass": "teste",
+            "projectName": "Teste_33b196d3"
+        },
+        {
             "name": "Python: Arquivo Atual",
             "type": "python",
             "request": "launch",
