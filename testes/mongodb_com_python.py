@@ -2,7 +2,7 @@ from pymongo import MongoClient
 client = MongoClient('localhost', 27017)
 print(client.list_database_names())
 
-# Cliente basse de dados
+# Cliente base de dados
 db = client.Estudo_MongoDB
 
 # Inserindo dados
