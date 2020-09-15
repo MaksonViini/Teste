@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - teste",
+            "request": "launch",
+            "mainClass": "testes.teste",
+            "projectName": "Teste_33b196d3"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Aula0007",
             "request": "launch",
             "mainClass": "Aula0007",
