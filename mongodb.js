@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 const UserSchema  = new mongoose.Schema({   
     Title: {
         type: String,
@@ -21,5 +21,6 @@ const UserSchema  = new mongoose.Schema({
 
         }
     }             
-}
-)
+});
+
+mongoose.model('test', UserSchema);
