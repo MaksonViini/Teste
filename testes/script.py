@@ -7,7 +7,7 @@ temas = ['Mobilidade urbana sustentável', 'A evasão escolar em questão no Bra
 'O aumento da expectativa de vida entre os brasileiros', 'Analfabetismo total e funcional', 
 'O trabalho na construção da dignidade humana', 'Viver em rede no século 21: os limites entre o público e o privado', 
 'Efeitos da implantação da Lei Seca no Brasil', 'Publicidade infantil em questão no Brasil', 
-'A persistência da violência contra a mulher na sociedade brasileira', 'Desafios para a formação educacional de surdos no Brasil', 
+'A persistência da violência contra a mulher na sociedade brasileira',
 'Valorização do SUS', 'Os impactos das fake news na sociedade brasileira', 'O acesso à informação na sociedade brasileira', 
 'Os impactos psicológicos do uso das redes sociais pelos jovens', 'Saúde nutricional no Brasil em debate', 
 'O envelhecimento e os direitos da população idosa no Brasil', 'A importância e os desafios da oferta de educação financeira nas escolas do Brasil', 
