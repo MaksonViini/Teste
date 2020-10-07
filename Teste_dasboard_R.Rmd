@@ -1,0 +1,57 @@
+---
+title: "Teste Dashboard"
+output:
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    theme: cerulean
+runtime: shiny
+---
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+vector1 = c(1, 2, 3, 5, 6, 8 ,9, 15)
+vector2 = c(8, 15, 69, 23, 19, 16, 18)
+```
+
+
+Pagina 1 
+===
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Grafico A
+
+```{r}
+hist(vector1)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Grafico B
+
+```{r}
+barplot(vector2)
+```
+
+### Grafico C
+
+```{r}
+
+```
+
+
+Pagina 2
+===
+
+Column {data-width=350}
+---
+### Grafico 1
+```{r}
+plot(vector1, vector2)
+```
+
