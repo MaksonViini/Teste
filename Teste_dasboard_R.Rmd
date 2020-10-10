@@ -1,57 +1,31 @@
 ---
-title: "Teste Dashboard"
-output:
-  flexdashboard::flex_dashboard:
-    orientation: columns
-    vertical_layout: fill
-    theme: cerulean
+title: "FlexDash"
+output: flexdashboard::flex_dashboard
 runtime: shiny
 ---
 
-
-```{r setup, include=FALSE}
-library(flexdashboard)
-library(tidyverse)
-vector1 = c(1, 2, 3, 5, 6, 8 ,9, 15)
-vector2 = c(8, 15, 69, 23, 19, 16, 18)
+```{r global, include=FALSE}
+# load data in 'global' chunk so it can be shared by all users of the dashboard
+library(datasets)
+library(knitr)
+vector1 = c(1, 2, 3, 4, 5, 6)
+vector2 = c(1, 2, 3, 4, 5, 6)
+data(faithful)
 ```
 
-
-Pagina 1 
-===
-
-Column {data-width=650}
+Column {}
 -----------------------------------------------------------------------
 
-### Grafico A
-
+### Histograma
 ```{r}
 hist(vector1)
 ```
 
-Column {data-width=350}
+Column
 -----------------------------------------------------------------------
 
-### Grafico B
+### Plot graficos
 
-```{r}
-barplot(vector2)
-```
-
-### Grafico C
-
-```{r}
-
-```
-
-
-Pagina 2
-===
-
-Column {data-width=350}
----
-### Grafico 1
 ```{r}
 plot(vector1, vector2)
 ```
-
