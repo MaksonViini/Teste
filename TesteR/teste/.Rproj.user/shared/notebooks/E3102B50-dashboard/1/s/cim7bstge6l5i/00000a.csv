@@ -1,0 +1,12 @@
+"0","# load data in 'global' chunk so it can be shared by all users of the dashboard"
+"0","library(datasets)"
+"0","library(knitr)"
+"0","library(DBI)"
+"0","con = dbConnect(RMySQL::MySQL(),"
+"0","                dbname = ""teste"","
+"0","                host = ""localhost"","
+"0","                user = ""root"", "
+"0","                password: """","
+"0","                port = ""3306"")"
+"2","Error in .local(drv, ...) : objeto 'password' não encontrado
+"
