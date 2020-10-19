@@ -1,6 +1,10 @@
 ---
 title: "FlexDash"
-output: flexdashboard::flex_dashboard
+output:
+    flexdashboard::flex_dashboard:
+    rmarkdown::html_document:
+    css: styles.css
+   
 runtime: shiny
 ---
 
@@ -9,12 +13,12 @@ runtime: shiny
 library(datasets)
 library(knitr)
 library(DBI)
-con = dbConnect(RMySQL::MySQL(),
-                dbname = "teste",
-                host = "localhost",
-                user = "root", 
-                password: "",
-                port = "3306")
+#con = dbConnect(RMySQL::MySQL(),
+             #   dbname = "teste",
+              #  host = "localhost",
+               # user = "root", 
+                #password: "",
+                #port = "3306")#
 vector1 = c(1, 2, 3, 4, 5, 6)
 vector2 = c(1, 2, 3, 4, 5, 6)
 data(faithful)
