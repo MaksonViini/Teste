@@ -12,6 +12,7 @@ public class CartaoCredito implements IPagamentoImpl {
     private int mesValido;
     private int anoValido;
     private int codigoSeguranca;
+    private int parcelas;
 
     /**
      * Método construtor para a classe Cartão de Crédito
@@ -21,6 +22,9 @@ public class CartaoCredito implements IPagamentoImpl {
         this.mesValido = this.anoValido = this.codigoSeguranca = 0;
     }
 
+    /**
+     * Método para leitura do Cartão de Credito
+     */
     @Override
     public void leitura() {
         this.numeroCartao = JOptionPane.showInputDialog(null, "Digite o número do cartao");
@@ -35,8 +39,13 @@ public class CartaoCredito implements IPagamentoImpl {
         do {
             this.codigoSeguranca = Integer.parseInt(JOptionPane.showInputDialog(null, "Código de segurança"));
         } while (this.codigoSeguranca <= 99 || this.codigoSeguranca > 999);
+
+        this.parcelas = Integer.parseInt(JOptionPane.showInputDialog(null, "Dividir em quantas vezes"));
     }
 
+    /**
+     * Método para processamento do Cartão de Credito
+     */
     @Override
     public void processamento() {
         System.out.println ("Processando o pagamento...");
@@ -45,6 +54,10 @@ public class CartaoCredito implements IPagamentoImpl {
         System.out.println ("Número do cartão..: " + this.codigoSeguranca);
     }
 
+    /**
+     * Método para emissao do Cartão de Credito
+     * @param pedido
+     */
     @Override
     public void emissao(Pedido pedido) {
         double totalPedido = 0;
@@ -54,6 +67,8 @@ public class CartaoCredito implements IPagamentoImpl {
             totalPedido += item.getPreco();
 
         System.out.println ("Total.....: R$ " + totalPedido);
+
+        System.out.println ("Valor por mes.....: R$ " + totalPedido/parcelas + " Durante" + parcelas + " meses");
 
         System.out.println ("Cartão de crédito APROVADO!");
     }
