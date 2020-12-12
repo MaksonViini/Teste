@@ -70,6 +70,10 @@ public class Boleto implements IPagamentoImpl {
         }
     }
 
+    
+    /** 
+     * @param pedido
+     */
     @Override
     public void emissao(Pedido pedido) {
         double totalPedido = 0;
