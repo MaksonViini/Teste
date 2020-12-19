@@ -1,3 +1,12 @@
 {
-    "C_Cpp.errorSquiggles": "Disabled"
+    "python.pythonPath": "C:\\Users\\Makson\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "r.bracketedPaste": true,
+    "r.lsp.path": "C:\\Users\\varun\\Documents\\R-4.0.2\\bin\\R.exe",
+    "r.lsp.debug": true,
+    "r.lsp.diagnostics": true,
+    "r.rterm.option": [
+          "--no-save",
+          "--no-restore",
+          "--r-binary=C:\\Users\\varun\\Documents\\R-4.0.2\\bin\\R.exe"
+      ],
 }
