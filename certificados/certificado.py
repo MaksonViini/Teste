@@ -2,6 +2,8 @@ from xlrd import open_workbook
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
+import pandas as pd
+import os
 
 def gera_certificado(nome_certificado, nome_arquivo):
     nome_do_arquivo_certificado = 'certificado_' + nome_arquivo.replace(' ', '_') + '.png'
@@ -11,7 +13,7 @@ def gera_certificado(nome_certificado, nome_arquivo):
     fonte = ImageFont.truetype("arial.ttf", 15)
 
     text = "Escrevendo um texto, para testar o certificado, \nEmitido no dia 17/12/2020, na capacitacao \
-    \nTeste X Wordpress com Python test H"
+    \nTeste X Wordpress com Python Ahora"
 
     imagem_certificado_desenho.text((400, 300), nome_certificado, font=fonte_certificado, fill=(0, 0, 0))
     imagem_certificado_desenho.text((400, 350), text, font=fonte, fill=(0, 0, 0))
@@ -21,6 +23,11 @@ def gera_certificado(nome_certificado, nome_arquivo):
 if __name__ == '__main__':
 
     planilha_inscricoes = open_workbook('certificados\\students.xlsx')
+
+    '''planilha_inscricoes = pd.read_excel(
+        'certificados\\students.xlsx',
+        engine='openpyxl'
+    )'''
     folha_planilha_inscricoes = planilha_inscricoes.sheet_by_index(0)
 
 
