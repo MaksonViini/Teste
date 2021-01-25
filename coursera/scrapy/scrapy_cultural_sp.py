@@ -1,7 +1,7 @@
 from scrapy.selector import Selector
 from scrapy.http import Request
-from scrapy_cultural_sp.items import Atracao
-from scrapy.contrib.spiders import CrawlSpider
+#from scrapy_cultural_sp.items import Atracao
+#from scrapy.contrib.spiders import CrawlSpider
 from datetime import date
 from datetime import datetime
 import unicodedata
