@@ -17,7 +17,6 @@ class Carro:
 c1 = Carro(300, True, 'Azul')
 
 c1.mostra_atributos()
-
 c1.altera_atributos(1, False)
-
 c1.mostra_atributos()
+
