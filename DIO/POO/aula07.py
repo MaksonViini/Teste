@@ -3,12 +3,11 @@ class Calculadora:
         self.a = num1
         self.b = num2
 
-    def soma (self):
+    def soma(self):
         return self.a + self.b
 
     def subtracao(self):
         return self.a - self.b
-
 
     def multiplicacao(self):
         return self.a * self.b
