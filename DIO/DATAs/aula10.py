@@ -15,7 +15,6 @@ class Dates:
         horario = time(hour=15, minute=18, second=20)
         print(horario.strftime('%H:%M:%S\n'))
 
-
     def trabalhando_com_datetime():
         data_hora = datetime.today()
         print(data_hora, '\n')
