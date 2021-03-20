@@ -16,9 +16,13 @@ class Dates:
         print(horario.strftime('%H:%M:%S\n'))
 
     def trabalhando_com_datetime():
-        data_hora = datetime.today()
-        print(data_hora, '\n')
-        print(data_hora.strftime('%d/%m/%y %H:%M:%S\n'))
+        data_atual = datetime.today()
+        print(data_atual, '\n')
+        print(data_atual.strftime('%d/%m/%y %H:%M:%S\n'))
+
+        # Trazendo o dia atual traduzido a partir do indice da tupla
+        tupla = ('Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo')
+        print(tupla[data_atual.weekday()])
 
 
 # if __name__ == '__main__':
