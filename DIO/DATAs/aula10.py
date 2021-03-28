@@ -21,7 +21,8 @@ class Dates:
         print(data_atual.strftime('%d/%m/%y %H:%M:%S\n'))
 
         # Trazendo o dia atual traduzido a partir do indice da tupla
-        tupla = ('Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo')
+        tupla = ('Segunda', 'Terca', 'Quarta',
+                 'Quinta', 'Sexta', 'Sabado', 'Domingo')
         print(tupla[data_atual.weekday()])
 
 
