@@ -5,3 +5,5 @@
 *.zip
 
 .data
+
+conexao_mapeamento.py
