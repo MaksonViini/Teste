@@ -8,5 +8,6 @@
           "--no-save",
           "--no-restore",
           "--r-binary=C:\\Users\\varun\\Documents\\R-4.0.2\\bin\\R.exe"
-      ],
+    ],
+    "jupyter.jupyterServerType": "local",
 }
