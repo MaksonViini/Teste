@@ -15,11 +15,12 @@ dev = [{
     'Habilidades': ['Python', 'Git']
 }]
 
-# Devolve uma desenvolvedor pelo ID, altera e deleta
-
 
 @app.route('/dev/<int:id>/', methods=['GET', 'PUT', 'DELETE'])
 def developer(id):
+    '''
+    Devolve uma desenvolvedor pelo ID, altera e deleta
+    '''
     if request.method == 'GET':
         try:
             response = dev[id]
@@ -54,11 +55,12 @@ def developer(id):
             }
         )
 
-# Lista todos os desenvolvedores e permite registrar um novo dev
-
 
 @app.route('/dev/', methods=['POST', 'GET'])
 def lista_dev():
+    ''' 
+    Lista todos os desenvolvedores e permite registrar um novo dev
+    '''
     if request.method == 'POST':
         dados = json.loads(request.data)
         posicao = len(dev)
