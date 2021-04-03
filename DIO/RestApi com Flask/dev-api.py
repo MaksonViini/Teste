@@ -5,10 +5,12 @@ import json
 app = Flask(__name__)
 
 dev = [{
+    'id': '0',
     'Nome': 'Makson',
     'Habilidades': ['Python', 'Ciencia de dados']
 },
     {
+    'id': '1',
     'Nome': 'Vinicio',
     'Habilidades': ['Python', 'Git']
 }]
@@ -59,13 +61,14 @@ def developer(id):
 def lista_dev():
     if request.method == 'POST':
         dados = json.loads(request.data)
+        posicao = len(dev)
+        dados['id'] = posicao
         dev.append(dados)
         return jsonify(
-            {
-                'status': 'Sucess',
-                'Mensagem': 'Registro Inserido!'
-            }
+            dev[posicao]
         )
+    elif request.method == 'GET':
+        return jsonify(dev)
 
 
 if __name__ == '__main__':
