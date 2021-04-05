@@ -1,6 +1,7 @@
 from flask import Flask, request
 from flask_restful import Resource, Api
 import json
+from habilitadades import Habilidades
 
 
 app = Flask(__name__)
@@ -19,6 +20,10 @@ dev = [{
 
 
 class Desenvolvedor(Resource):
+    '''
+    Devolve uma desenvolvedor pelo ID, altera e deleta
+    '''
+
     def get(self, id):
         try:
             response = dev[id]
@@ -50,7 +55,25 @@ class Desenvolvedor(Resource):
         )
 
 
+class ListaDesenvolvedores(Resource):
+    '''
+    Devolve uma listagem dos desenvolvedores e inclui algum dev
+    '''
+
+    def get(self):
+        return dev
+
+    def post(self):
+        dados = json.loads(request.data)
+        posicao = len(dev)
+        dados['id'] = posicao
+        dev.append(dados)
+        return dev[posicao]
+
+
 api.add_resource(Desenvolvedor, '/dev/<int:id>/')
+api.add_resource(ListaDesenvolvedores, '/dev/')
+api.add_resource(Habilidades, '/habilidades/')
 
 if __name__ == '__main__':
     app.run()
