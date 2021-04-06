@@ -38,7 +38,7 @@ def task(id):
 
     elif request.method == 'PUT':
         dados = json.loads(request.data)
-        tarefas[id] = dados
+        tarefas[id]['status'] = dados
         return jsonify(dados)
 
     elif request.method == 'DELETE':
@@ -49,6 +49,18 @@ def task(id):
                 'Mensagem': 'Registro excluido!'
             }
         )
+
+
+@app.route('/task/', methods=['GET', 'POST'])
+def lista_task():
+    if request.method == 'POST':
+        dados = json.loads(request.data)
+        posicao = len(tarefas)
+        dados['id']['status'] = posicao
+        tarefas.append(dados)
+        return jsonify(tarefas[posicao])
+    elif request.method == 'GET':
+        return jsonify(tarefas)
 
 
 if __name__ == '__main__':
