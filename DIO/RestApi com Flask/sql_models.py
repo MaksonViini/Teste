@@ -22,6 +22,11 @@ class Pessoas(Base):
     def __repr__(self):
         return f'<Pessoa> {self.nome}'
 
+    
+    def save(self):
+        db_session.add(self)
+        db_session.commit()
+
 
 class Atividades(Base):
     __tablename__ = 'Atividades'
