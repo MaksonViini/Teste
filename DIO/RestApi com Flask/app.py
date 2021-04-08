@@ -1,4 +1,3 @@
-from flask.wrappers import Response
 from flask import Flask, request, request
 from flask_restful import Resource, Api
 import json
