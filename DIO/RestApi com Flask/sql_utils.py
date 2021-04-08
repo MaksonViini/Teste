@@ -3,7 +3,7 @@ from sql_models import Pessoas
 
 def insere_pessoas():
     # Insere dados na tabela pessoas
-    pessoa = Pessoas(nome='Vinicio', idade=20)
+    pessoa = Pessoas(nome='Makson', idade=20)
     print(pessoa)
     pessoa.save()
 
@@ -31,8 +31,8 @@ def exclui_pessoa():
 
 
 if __name__ == '__main__':
-    # insere_pessoas()
+    insere_pessoas()
     # consulta()
     # altera_pessoa()
-    exclui_pessoa()
-    consulta()
+    # exclui_pessoa()
+    # consulta()
