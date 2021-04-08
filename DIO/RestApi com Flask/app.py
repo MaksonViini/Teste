@@ -43,6 +43,7 @@ class Pessoa(Resource):
                 'Mensagem': 'Pessoa nao encontrada!'
             }
 
+    @auth.login_required
     def put(self, nome):
         pessoa = Pessoas.query.filter_by(nome=nome).first()
         dados = request.json
@@ -57,6 +58,7 @@ class Pessoa(Resource):
             'idade': pessoa.idade
         }
 
+    @auth.login_required
     def delete(self, nome):
         pessoa = Pessoas.query.filter_by(nome=nome).first()
         msg = f'Pessoa {pessoa.nome} excluida com sucesso!'
@@ -74,6 +76,7 @@ class ListaPessoas(Resource):
         return [{'id': i.id, 'nome': i.nome, 'idade': i.idade}
                 for i in pessoas]
 
+    @auth.login_required
     def post(self):
         data = request.json
         pessoa = Pessoas(nome=data['nome'], idade=data['idade'])
@@ -86,6 +89,7 @@ class ListaPessoas(Resource):
 
 
 class ListaAtividades(Resource):
+    @auth.login_required
     def get(self, nome):
         atividades = Atividades.query.all()
         data = request.json
@@ -95,6 +99,7 @@ class ListaAtividades(Resource):
         else:
             return {'Status': 'Pessoa nao encontrada!'}
 
+    @auth.login_required
     def post(self):
         data = request.json
         pessoa = Pessoas.query.filter_by(nome=data['pessoa']).first()
