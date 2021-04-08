@@ -1,5 +1,4 @@
 from flask.wrappers import Response
-from tasks_api import lista_task
 from flask import Flask, request, request
 from flask_restful import Resource, Api
 import json
