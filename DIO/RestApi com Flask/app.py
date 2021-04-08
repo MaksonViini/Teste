@@ -84,36 +84,6 @@ class ListaAtividades(Resource):
             'nome': atividade.nome
         }
 
-    def put(self, nome):
-        atividades = Atividades()
-        pessoa = Pessoas.query.all()
-        data = request.json
-        if nome == data['pessoa']:
-            data['status'] = 'Atividade Concluida!'
-        else:
-            return {'Status': 'Nome da atividade nao encontrado!'}
-        atividades.save()
-        return {
-            'id': atividades.id,
-            # 'nome': atividades.pessoa.nome,
-            # 'idade': atividades.idade,
-            'status': atividades.status
-        }
-
-    # def put(self, nome):
-    #     pessoa = Pessoas.query.filter_by(nome=nome).first()
-    #     dados = request.json
-    #     if 'nome' in dados:
-    #         pessoa.nome = dados['nome']
-    #     if 'idade' in dados:
-    #         pessoa.idade = dados['idade']
-    #     pessoa.save()
-    #     return {
-    #         'id': pessoa.id,
-    #         'nome': pessoa.nome,
-    #         'idade': pessoa.idade
-    #     }
-
 
 api.add_resource(Pessoa, '/pessoa/<string:nome>/')
 api.add_resource(ListaPessoas, '/pessoa/')
