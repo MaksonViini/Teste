@@ -64,10 +64,14 @@ class ListaPessoas(Resource):
 
 
 class ListaAtividades(Resource):
-    def get(self):
+    def get(self, nome):
         atividades = Atividades.query.all()
-        return [{'id': i.id, 'pessoa': i.pessoa.nome, 'nome': i.nome}
-                for i in atividades]
+        data = request.json
+        if nome == data['pessoa']:
+            return [{'id': i.id, 'pessoa': i.pessoa.nome, 'nome': i.nome}
+                    for i in atividades]
+        else:
+            return {'Status': 'Pessoa nao encontrada!'}
 
     def post(self):
         data = request.json
@@ -80,10 +84,40 @@ class ListaAtividades(Resource):
             'nome': atividade.nome
         }
 
+    def put(self, nome):
+        atividades = Atividades()
+        pessoa = Pessoas.query.all()
+        data = request.json
+        if nome == data['pessoa']:
+            data['status'] = 'Atividade Concluida!'
+        else:
+            return {'Status': 'Nome da atividade nao encontrado!'}
+        atividades.save()
+        return {
+            'id': atividades.id,
+            # 'nome': atividades.pessoa.nome,
+            # 'idade': atividades.idade,
+            'status': atividades.status
+        }
+
+    # def put(self, nome):
+    #     pessoa = Pessoas.query.filter_by(nome=nome).first()
+    #     dados = request.json
+    #     if 'nome' in dados:
+    #         pessoa.nome = dados['nome']
+    #     if 'idade' in dados:
+    #         pessoa.idade = dados['idade']
+    #     pessoa.save()
+    #     return {
+    #         'id': pessoa.id,
+    #         'nome': pessoa.nome,
+    #         'idade': pessoa.idade
+    #     }
+
 
 api.add_resource(Pessoa, '/pessoa/<string:nome>/')
 api.add_resource(ListaPessoas, '/pessoa/')
-api.add_resource(ListaAtividades, '/atividades/')
+api.add_resource(ListaAtividades, '/atividades/<string:nome>/')
 
 if __name__ == '__main__':
     app.run()
