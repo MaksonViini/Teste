@@ -1,7 +1,7 @@
 from flask import Flask, request, request
 from flask_restful import Resource, Api
 import json
-from sql_models import Pessoas, Atividades
+from sql_models import Pessoas, Atividades, Usuarios
 from flask_httpauth import HTTPBasicAuth
 
 auth = HTTPBasicAuth()
@@ -19,6 +19,12 @@ api = Api(app)
 #     if not (login, senha):
 #         return False
 #     return USUARIOS.get(login) == senha
+
+@auth.verify_password
+def verificacao(login, senha):
+    if not (login, senha):
+        return False
+    return Usuarios.query.filter_by(login=login, senha=senha).first()
 
 
 class Pessoa(Resource):
