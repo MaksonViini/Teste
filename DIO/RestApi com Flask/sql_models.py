@@ -61,11 +61,11 @@ class Usuarios(Base):
         return f'<Usuario {self.login}>'
 
     def save(self):
-        db_session.add()
+        db_session.add(self)
         db_session.commit()
 
     def delete(self):
-        db_session.delete()
+        db_session.delete(self)
         db_session.commit()
 
 

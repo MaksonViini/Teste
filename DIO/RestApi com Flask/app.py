@@ -14,11 +14,11 @@ api = Api(app)
 # }
 
 
-@auth.verify_password
-def verificacao(login, senha):
-    if not (login, senha):
-        return False
-    return USUARIOS.get(login) == senha
+# @auth.verify_password
+# def verificacao(login, senha):
+#     if not (login, senha):
+#         return False
+#     return USUARIOS.get(login) == senha
 
 
 class Pessoa(Resource):
