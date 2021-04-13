@@ -11,3 +11,5 @@ conexao_mapeamento.py
 flask-api
 
 *.db
+
+*.npy
