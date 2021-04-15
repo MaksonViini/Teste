@@ -3,7 +3,7 @@ class Carro:
         self.vel_max = vel_max
         self.ligado = ligado
         self.cor = cor
-    
+
     def mostra_atributos(self):
         print(self.vel_max)
         print(self.ligado)
@@ -14,9 +14,9 @@ class Carro:
         self.ligado = ligado
         self.cor = cor
 
+
 c1 = Carro(300, True, 'Azul')
 
 c1.mostra_atributos()
 c1.altera_atributos(1, False)
 c1.mostra_atributos()
-

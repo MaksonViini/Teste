@@ -1,7 +1,8 @@
 class Lista:
-  def append(self, elemento):
-    return "Oops! Este objeto não é uma lista"
-    
+    def append(self, elemento):
+        return "Oops! Este objeto não é uma lista"
+
+
 lista = []
 
 a = Lista()

@@ -4,6 +4,7 @@ def soma_lista(lista):
     else:
         return lista[0] + soma_lista(lista[1:])
 
+
 lista = [1, 2, 3, 4]
 
 print(soma_lista(lista))

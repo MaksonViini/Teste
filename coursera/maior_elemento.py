@@ -1,2 +1,2 @@
-def maior_elemento (lista):
+def maior_elemento(lista):
     return max(lista)

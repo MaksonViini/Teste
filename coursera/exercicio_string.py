@@ -1,11 +1,12 @@
 def menor_strings(str):
-    maior=0
+    maior = 0
     for i in range(len(str)):
         maior = len(str[i])
         if maior >= len(str[i]):
             maior = len(str[i])
             palavra = str[i].strip()
     return palavra.capitalize()
+
 
 def mostActive(customers):
     # Write your code here
@@ -17,7 +18,8 @@ def mostActive(customers):
                 del(lista[j])
             else:
                 j = j + 1
-    return sorted(lista)    
+    return sorted(lista)
+
 
 def minTime(files, numCores, limit):
     files.sort()

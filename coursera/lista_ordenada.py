@@ -7,6 +7,7 @@ def ordenada(lista):
             return False
     return True
 
+
 lista = [1, 5, 8]
 
 print(ordenada(lista))

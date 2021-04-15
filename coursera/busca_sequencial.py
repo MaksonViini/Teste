@@ -4,6 +4,7 @@ def busca(lista, elemento):
             return i
     return False
 
+
 print(busca(['a', 'e', 'i'], 'e'))
 # deve devolver => 1
 

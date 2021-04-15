@@ -7,4 +7,5 @@ def maiusculas(frase):
             caracter += item
     return caracter
 
+
 print(maiusculas('Programamos em Python 2?'))
