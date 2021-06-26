@@ -1,8 +1,5 @@
 # Repositório para teste de novas ferramentas e aprendizagem.
 
-### Links
-- [Link dos dados](https://www.kaggle.com/caesarlupum/risco-de-credito?select=teste.csv)
-- [Link do projeto em produção](https://credit-risc.herokuapp.com/)
 
 ## Principais ferramentas:
 - Python (Pandas, Scikit-Learn, Numpy, Seaborn, Matplotlib, StatsModel, Scrapy, Selenium, Plotly, Keras)
