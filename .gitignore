@@ -22,3 +22,5 @@ flask-api
 *.db
 
 *.npy
+
+.ipynb_checkpoints
