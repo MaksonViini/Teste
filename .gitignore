@@ -24,3 +24,5 @@ flask-api
 *.npy
 
 .ipynb_checkpoints
+
+*.log
