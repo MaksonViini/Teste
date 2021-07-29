@@ -1,10 +1,12 @@
 from database import engine, Base
+from models import Job
 
 print('Criando database')
 
 
 def create_db():
     Base.metadata.create_all(bind=engine)
+
 
 def drop_all():
     Base.metadata.drop_all(bind=engine)
