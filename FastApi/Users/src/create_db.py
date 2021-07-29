@@ -1,5 +1,5 @@
 from database import engine, Base
-from models import Job
+from models import Users
 
 print('Criando database')
 
