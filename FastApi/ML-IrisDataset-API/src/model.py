@@ -1,15 +1,17 @@
 from sklearn.datasets import load_iris
 import pandas as pd    
 import numpy as np 
-from sklearn.linear_model import LinearRegression
+from sklearn.tree import DecisionTreeClassifier
 import pickle
 
-data = load_iris()
+iris = load_iris()
 
 
-X = data
-y = data.target
-
-lr = LinearRegression(X, y)
+X = iris.data
+y = iris.target
 
 
+dt = DecisionTreeClassifier().fit(X, y)
+
+with open('ML-IrisDataset-API/src/model.pkl', 'wb') as file:
+    pickle.dump(dt, file)
