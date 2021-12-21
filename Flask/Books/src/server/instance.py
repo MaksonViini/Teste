@@ -1,4 +1,4 @@
-from flask import Flask, blueprints
+from flask import Flask, Blueprint
 from flask_restx import Api
 
 app = Flask(__name__)
@@ -7,7 +7,7 @@ app = Flask(__name__)
 class Server():
     def __init__(self, ) -> None:
         self.app = Flask(__name__)
-        self.blueprint = blueprints('api', __name__, url_prefix='/api')
+        self.blueprint = Blueprint('api', __name__, url_prefix='/api')
         self.api = Api(self.blueprint, doc='/docs', title='Api Flask-SQLAlchemy',
                        version='1.0', description='API for the server')
         self.app.register_blueprint(self.blueprint)

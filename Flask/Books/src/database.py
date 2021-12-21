@@ -1,5 +1,5 @@
-from flask_sqlalchemy import SQLAlchemy, event, DDL
+from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
-event = event()
-DDL = DDL()
+# event = event()
+# DDL = DDL()

@@ -1,5 +1,5 @@
 from flask import jsonify
-from mashmallow import ValidationError
+# from mashmallow import ValidationError
 
 from mashmallow import ma
 from database import db

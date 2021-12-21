@@ -1,5 +1,5 @@
 from enum import unique
-from database import db, event, DDL
+from database import db
 
 
 class BookModel(db.Model):
@@ -49,8 +49,8 @@ def delete_from_db(self) -> None:
     db.session.commit()
 
 
-event.listen(
-    BookModel.__table__,
-    'after_create',
-    DDL(f"select create_hypertable({BookModel.__tablename__}, 'time');")
-)
+# event.listen(
+#     BookModel.__table__,
+#     'after_create',
+#     DDL(f"select create_hypertable({BookModel.__tablename__}, 'time');")
+# )
