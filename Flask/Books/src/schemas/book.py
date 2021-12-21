@@ -1,5 +1,6 @@
-from mashmallow import ma 
+from mashmallow import ma
 from models.book import BookModel
+
 
 class BookSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
