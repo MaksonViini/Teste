@@ -1,5 +1,4 @@
 from database import db
-from models.book import BookModel
 
 
 class BookPrice(db.Model):

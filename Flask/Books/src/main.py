@@ -2,7 +2,6 @@ from flask_restx import Api
 from mashmallow import ma
 from database import db
 from models.timescale import BookPrice
-
 from controllers.book import Book, Home
 # from mashmallow import ValidationError
 
