@@ -16,13 +16,17 @@ def read(**args):
     return collection.find(args)
 
 
-def read_one(**args):
-    return collection.find_one(args)
+def read_for_age(age):
+    return collection.find({'age': age})
 
 
-def update(**args):
-    collection.update(args)
+def read_for_age_with_operator(op, age):
+    return collection.find({'age': {op: age}})
 
 
-def delete(**args):
-    collection.delete(args)
+def update(args):
+    collection.update(args[0], args[1])
+
+
+def delete(args):
+    collection.remove(args)
