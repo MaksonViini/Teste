@@ -8,15 +8,17 @@ class BookModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False, unique=True)
     pages = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.Float, nullable=False)
     
     book = db.relationship("BookPrice")
 
-    def __init__(self, title, pages) -> None:
+    def __init__(self, title, pages, price) -> None:
         self.title = title
         self.pages = pages
+        self.price = price
 
     def __repr__(self) -> str:
-        return f'<Book={self.title} pages={self.pages}>'
+        return f'<Book={self.title} pages={self.pages} price={self.price}>'
 
     def json(self) -> dict:
         return {
