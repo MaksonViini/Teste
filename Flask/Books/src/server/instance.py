@@ -2,7 +2,6 @@ from flask import Flask, Blueprint
 from flask_restx import Api
 from mashmallow import ma
 from database import db
-from flask_migrate import Migrate
 
 
 class Server():
@@ -18,8 +17,6 @@ class Server():
         # 'postgresql://postgres:postgres@localhost:5432/orm_timescale'
         self.app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
         self.app.config['PROPAGATE_EXCEPTIONS'] = True
-
-        migrate = Migrate(self.app, db)
 
         self.book_name_space = self.book_name_space()
 
