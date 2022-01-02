@@ -1,10 +1,13 @@
 FROM python:3.9-slim
 
-COPY . /Books
-COPY . /requirements.txt 
+WORKDIR /app
 
-WORKDIR /Books
+ENV FLASK_APP main.py
+
+COPY requirements.txt .
 
 RUN pip install -r requirements.txt
 
-CMD ["python", "src/main.py"]
+COPY . .
+
+CMD ["python3", "src/main.py"]

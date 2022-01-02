@@ -12,9 +12,10 @@ class Server():
                        version='1.0', description='API for the server')
         self.app.register_blueprint(self.blueprint)
 
-        self.app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost:5432/orm_timescale1'
+        self.app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@172.22.0.1:3306/orm_timescale1"'
         # 'sqlite:///data.db'
         # 'postgresql://postgres:postgres@localhost:5432/orm_timescale'
+        # "postgresql://postgres:postgres@172.22.0.1:3306/orm_timescale1"
         self.app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
         self.app.config['PROPAGATE_EXCEPTIONS'] = True
 
