@@ -1,0 +1,10 @@
+[
+  "test_books.py::TestBooks::test_books_retorna_200_se_tiver_um_id_registrado",
+  "test_books.py::TestBooks::test_books_retorna_404_se_nao_tiver_um_id_registrado",
+  "test_books.py::TestHome::test_home_retorna_200_se_tiver_conteudo_na_home",
+  "test_books.py::TestHome::test_home_retorna_json_com_mensagem_na_home",
+  "test_books.py::test_books_list",
+  "test_books.py::test_books_retorna_200_se_tiver_um_id_registrado",
+  "test_books.py::test_books_retorna_400_se_nao_tiver_um_id_registrado",
+  "test_books.py::test_books_retorna_404_se_nao_tiver_um_id_registrado"
+]

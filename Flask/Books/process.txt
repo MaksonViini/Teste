@@ -1,0 +1,4 @@
+export FLASK_APP=main.py
+flask db init - for inital paste for migrates
+flask db migrate -m "initial migration" - for migration
+
