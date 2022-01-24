@@ -15,5 +15,7 @@ resource "aws_s3_bucket" "b" {
     Name        = "My bucket"
     Environment = "Dev"
     ManagedBy   = "Terraform"
+    Owner       = "Makson"
+    UpdateAt    = "2022-01-24"
   }
 }
