@@ -36,3 +36,4 @@ tfplan.out
 plan.tfout
 credentials
 *csv
+*.py
