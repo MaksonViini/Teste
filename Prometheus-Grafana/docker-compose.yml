@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  prometheus:
+    container_name: prometheus 
+    image: bitnami/prometheus:latest
+    volumes:
+      - /path/to/prometheus-persistence:/opt/bitnami/prometheus/data
+    ports:
+      - '9090:9090'
+    # restart: always
+  
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    ports:
+      - '3000:3000'
+    # restart: always
