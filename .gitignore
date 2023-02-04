@@ -29,3 +29,8 @@ flask-api
 
 postgres
 Flask/Books/postgres
+
+/venv
+
+rootkey.csv
+~./aws
