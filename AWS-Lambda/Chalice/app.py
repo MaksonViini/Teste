@@ -1,11 +1,44 @@
-from chalice import Chalice
+from chalice import Chalice, Rate
+import logging
 
 app = Chalice(app_name="Chalice")
+app.log.setLevel(logging.DEBUG)
 
 
-@app.route("/")
+@app.route("/health")
 def index():
-    return {"hello": "world"}
+    return {"Ping": "Pong"}
+
+
+@app.route("/teste")
+def teste_lambda_handler():
+    return {"Message": "Testando o Lambda Handler com Chalice"}
+
+
+@app.route("/query")
+def query():
+    return {"Message": "Query!", "Params": app.current_request.query_params}
+
+
+@app.route("/post-router", methods=["POST"])
+def post_func():
+    return {"Message": "Post Method!", "Params": app.current_request.json_body}
+
+
+@app.lambda_function(name="teste-function")
+def my_lambda(request, context):
+    return {"Message": "My lambda integration!"}
+
+
+@app.schedule(Rate(1, unit=Rate.MINUTES))
+def scheduler(event):
+    app.log.info("Scheduler Executado!")
+
+
+@app.on_s3_event(bucket="teste")
+def s3_event(event):
+    app.log.info("Scheduler Executado a partir do Bucket!")
+    app.log.info(f"{event.bucket}, {event.key}")
 
 
 # The view function above will return {"hello": "world"}
