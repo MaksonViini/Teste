@@ -33,9 +33,7 @@ class TestApiGateway:
         stacks = response["Stacks"]
         stack_outputs = stacks[0]["Outputs"]
         if api_outputs := [
-            output
-            for output in stack_outputs
-            if output["OutputKey"] == "HelloWorldApi"
+            output for output in stack_outputs if output["OutputKey"] == "HelloWorldApi"
         ]:
             return api_outputs[0]["OutputValue"]  # Extract url from stack outputs
         else:
